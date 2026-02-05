@@ -1,0 +1,22 @@
+# 请填写以下配置信息
+
+######################### 主库配置 #########################
+master_ip = "192.168.1.100"
+master_port = 4000
+master_user = "root"
+master_password = ""
+
+######################### 备库配置 #########################
+slave_ip = "192.168.1.101"
+slave_port = 4000
+slave_user = "root"
+slave_password = ""
+
+######################### 检查配置 #########################
+check_sql = "select TABLE_SCHEMA,TABLE_NAME from information_schema.tables where TABLE_ROWS > 1000000000 and TIDB_PK_TYPE='NONCLUSTERED';"
+
+
+######################### 可选配置 #########################
+thread_count = 8
+chunk_size = 5000
+output_dir = "/tidbmgt/syncdiffoutput"
