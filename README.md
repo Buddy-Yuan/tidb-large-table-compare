@@ -98,7 +98,7 @@ check_sql = "select TABLE_SCHEMA,TABLE_NAME from information_schema.tables where
 # 其他配置
 thread_count = 8
 chunk_size = 5000
-output_dir = "/tidbmgt/syncdiffoutput"
+output_dir = "/tidb/syncdiffoutput"
 ```
 
 ### 密码加密
@@ -113,15 +113,12 @@ echo "你的明文密码" | base64
 **示例：**
 ```bash
 # 加密密码
-echo "TiDB@2025.12!" | base64
+echo "TiDB@2025" | base64
 # 输出：VGlEQDIyMjAyNS4xMiEh
 
 # 将加密后的密码填入 config.toml
 master_password = "VGlEQDIyMjAyNS4xMiEh"
 ```
-
-**明文密码：**
-如果不想加密，也可以直接填入明文密码（不推荐）。
 
 ## 输出说明
 
